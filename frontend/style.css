@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #202020;;
+  color: black;
+}
+
+nav {
+  background: #d1b454;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #0d0d0e;
+}
+
+.container {
+  background-color: #1e2f57;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+}
+main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .item {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .item img {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 10px;
+    }
+
+.form-box {
+  background: #3b5080;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #d1b454;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #b9983a;
+}
+
+header {
+      background-color: #333435;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .banner{
+      background: url(banner1.jpg)center/cover no-repeat;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      padding: 0 1rem;
+    }
+    .banner-texto h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px #d1b454;
+    }
+    header img {
+      height: 100px;
+      vertical-align: middle;
+    }
+
+        footer {
+      background-color: #d1b454;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+   
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
