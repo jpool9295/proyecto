@@ -2,7 +2,7 @@
 FROM nginx:alpine
 
 # Copiamos el código de la tienda dentro del contenedor
-COPY . /usr/share/nginx/html
+COPY ./frontend /usr/share/nginx/html
 
 # Exponemos el puerto 80
 EXPOSE 80
