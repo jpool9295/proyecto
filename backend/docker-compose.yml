@@ -4,7 +4,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
+    container_name: phpmyadmin-1
     restart: always
     ports:
       - "8081:80"
@@ -13,18 +13,18 @@ services:
       MYSQL_ROOT_PASSWORD: root123
 
   tienda:
-    build: .
-    container_name: tienda-urbana
+    image: nginx:alpine
+    container_name: tienda-urbana-1
     ports:
       - "8080:80"
     volumes:
-      - .:/usr/share/nginx/html
+      - ./frontend:/usr/share/nginx/html
     depends_on:
       - db   # espera a que MySQL arranque
 
   db:
     image: mysql:8.0
-    container_name: mysql-db
+    container_name: mysql-db-1
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root123
@@ -38,5 +38,7 @@ services:
 
 volumes:
   mysql_data:
+
+  
 
   
