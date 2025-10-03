@@ -28,13 +28,14 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: tienda_db
+      MYSQL_DATABASE: mi_data
       MYSQL_USER: tienda_user
       MYSQL_PASSWORD: tienda123
     ports:
       - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+       ./sql:/docker-entrypoint-initdb.d
 
 volumes:
   mysql_data:
