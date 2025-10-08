@@ -22,42 +22,67 @@
   </nav>
 
 
-  <main class="items">
+     <main class="items">
     <div class="item">
-      <img src="polo1.avif" alt="Prenda 1">
+      <img src="imagenes_hombres/polo1.avif" alt="Prenda 1">
       <p>TERCERA CAMISETA AS ROMA 25/26</p>
       <p>Precio S/.350 </p>
       <button class="btn">Agregar al carrito</button>
     </div>
     <div class="item">
-      <img src="pantalon1.avif" alt="Prenda 2">
+      <img src="imagenes_hombres/pantalon1.avif" alt="Prenda 2">
       <p>PANTALÓN JOGGER DE TEJIDO DENIM ADILENIUM SEASON 4 TEAMGEIST</p>
       <p>Precio: S/.429</p>
       <button class="btn">Agregar al carrito</button>
     </div>
     <div class="item">
-      <img src="polera.avif" alt="Prenda 3">
+      <img src="imagenes_hombres/polera.avif" alt="Prenda 3">
       <p>Casaca Deportiva con Capucha Z.N.E.</p>
       <p>Precio: S/.379</p>
       <button class="btn">Agregar al carrito</button>
     </div>
     <div class="item">
-      <img src="polo2.avif" alt="Prenda 4">
+      <img src="imagenes_hombres/polo2.avif" alt="Prenda 4">
       <p>Polo Trifolio serie holgado</p>
+      <p>Precio: S/.379</p>
       <button class="btn">Agregar al carrito</button>
     </div>
     <div class="item">
-      <img src="short.avif" alt="Prenda 5">
+      <img src="imagenes_hombres/polo1.avif" alt="Prenda 5">
       <p>Joggers Urban</p>
+      <p>Precio: S/.379</p>
       <button class="btn">Agregar al carrito</button>
     </div>
     <div class="item">
-      <img src="zapatilla1.avif" alt="Prenda 6">
+      <img src="imagenes_hombres/zapatilla1.avif" alt="Prenda 6">
       <p>Zapatillas de Running Supernova Stride 2.0</p>
+      <p>Precio: S/.379</p>
       <button class="btn">Agregar al carrito</button>
     </div>
     
-  </main>
+  
+   <div id="carrito" class="carrito">
+  <h2>🛒 Carrito de compras</h2>
+  <table class="carrito_compra">
+    <thead class="cabecera_carrito">
+      <tr>
+        <th>Producto</th>
+        <th>Precio (S/.)</th>
+        <th>Cant.</th>
+        <th>Subtotal</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="carrito-body"></tbody>
+  </table>
+
+  <p class="total"><strong>Total: S/. <span id="total">0.00</span></strong></p>
+  
+  <button id="vaciar-carrito">Vaciar carrito</button>
+  <button id="pagar-carrito">💳 Pagar ahora</button> <!-- ✅ NUEVO BOTÓN -->
+</div>
+</main>
+<script src="hombres.js"></script>
 </body>
 <footer>
     <p>Síguenos en redes sociales:</p>

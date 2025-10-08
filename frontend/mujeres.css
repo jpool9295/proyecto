@@ -5,12 +5,68 @@ body {
       margin: 0;
       padding: 0;
     }
+.banner{
+      background: url(images.jpeg)center/cover no-repeat;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      padding: 0 1rem;
+    }
+nav {
+  background: #d1b454;
+  padding: 15px;
+  text-align: center;
+}
 
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.items{
+  background-color: #1e2f57;
+}
+nav a:hover {
+  color: #0d0d0e;
+}
+    footer {
+      background-color: #d1b454;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+   
+    footer a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
     h2 {
       text-align: center;
       color: #ffcc00;
       margin-top: 30px;
     }
+/*estilo de boton*/
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #d1b454;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #b9983a;
+} 
 
     /* 🛍️ Sección de productos */
     .menu {
@@ -20,31 +76,37 @@ body {
       padding: 20px;
       justify-items: center;
     }
-
-    .producto-item {
-      background-color: #111;
-      border: 2px solid #0066ff;
-      border-radius: 15px;
-      text-align: center;
-      padding: 15px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      width: 90%;
+    main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
     }
-
-    .producto-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px #0066ff;
-    }
-
-    .producto-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+    .item {
+     background-color: #fff;
       border-radius: 10px;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    
     }
 
-    .producto-item h3 {
-      color: #ffcc00;
+    .item img {
+      width: 300px;
+      height: 300px;
+      margin-bottom: 10px;
+    }
+    
+    .item img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #949494;
+    }
+    .item p {
+      color: black;
       margin-top: 10px;
     }
 
@@ -56,58 +118,62 @@ body {
       color: #00bfff;
     }
 
-    .producto-item button {
-      background-color: #0066ff;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: background 0.3s;
-    }
 
-    .producto-item button:hover {
-      background-color: #ffcc00;
-      color: #000;
-    }
 
     /* 🛒 Estilos del carrito */
-    .carrito {
-      background-color: #111;
-      border-top: 3px solid #ffcc00;
-      padding: 20px;
-      margin: 20px;
-      border-radius: 15px;
+  .carrito {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background: #ffffff;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.25);
+  padding: 20px;
+  overflow-y: auto; /* 🔥 permite desplazarse dentro del carrito */
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+  .carrito.activo {
+  transform: translateX(0);
+}
+    .carrito h2{
+      color: #d1b454;
     }
-
-    table {
+      table {
       width: 100%;
-      color: #fff;
+      color: white;
       border-collapse: collapse;
       margin-top: 15px;
     }
-
+   th{
+    color: white;
+   }
     th, td {
       padding: 10px;
       text-align: center;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid #ffffff;
     }
-
+  table tr{
+  color: black;
+}
     th {
-      background-color: #0066ff;
+      background-color: #1e2f57;
     }
 
     .total {
       text-align: right;
       font-size: 18px;
       margin-top: 15px;
-      color: #ffcc00;
+      color: #d1b454;
     }
 
     button#vaciar-carrito,
     button#pagar-carrito {
-      background-color: #ffcc00;
+      background-color: #d1b454;
       color: #000;
       border: none;
       padding: 10px 20px;

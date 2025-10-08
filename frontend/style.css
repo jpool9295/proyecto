@@ -35,7 +35,13 @@ main {
       gap: 20px;
       padding: 20px;
     }
-
+.items{
+  background-color: #1e2f57;
+}
+ .item img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #949494;
+    }
     .item {
       background-color: #fff;
       border-radius: 10px;
@@ -100,14 +106,8 @@ button:hover {
   background: #b9983a;
 }
 
-header {
-      background-color: #333435;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
     .banner{
-      background: url(banner1.jpg)center/cover no-repeat;
+      background: url(images.jpeg)center/cover no-repeat;
       height: 350px;
       display: flex;
       align-items: center;
@@ -118,9 +118,10 @@ header {
       padding: 0 1rem;
     }
     .banner-texto h1 {
+      color: white;
       font-size: 3rem;
       margin-bottom: 0.5rem;
-      text-shadow: 2px 2px 4px #d1b454;
+     
     }
     header img {
       height: 100px;
@@ -171,3 +172,85 @@ header {
       border-radius: 5px;
       font-size: 1rem;
   }
+      /* 🛒 Estilos del carrito */
+  .carrito {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background: #ffffff;
+  box-shadow: -4px 0 12px rgba(0,0,0,0.25);
+  padding: 20px;
+  overflow-y: auto; /* 🔥 permite desplazarse dentro del carrito */
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+  .carrito.activo {
+  transform: translateX(0);
+}
+    .carrito h2{
+      color: #d1b454;
+    }
+      table {
+      width: 100%;
+      color: white;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+   th{
+    color: white;
+   }
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #ffffff;
+    }
+  table tr{
+  color: black;
+}
+    th {
+      background-color: #1e2f57;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 18px;
+      margin-top: 15px;
+      color: #d1b454;
+    }
+
+    button#vaciar-carrito,
+    button#pagar-carrito {
+      background-color: #d1b454;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button#vaciar-carrito:hover,
+    button#pagar-carrito:hover {
+      background-color: #0066ff;
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .menu {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .menu {
+        grid-template-columns: 1fr;
+      }
+    }
+  
