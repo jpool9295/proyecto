@@ -6,3 +6,4 @@ COPY ./frontend /usr/share/nginx/html
 
 # Exponemos el puerto 80
 EXPOSE 80
+
