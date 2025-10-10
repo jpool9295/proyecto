@@ -1,0 +1,128 @@
+body {
+    background-color: #1e2f57;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .banner {
+    background: url(images.jpeg) center/cover no-repeat;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding: 0 1rem;
+  }
+  
+  nav {
+    background: #d1b454;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    color: #0d0d0e;
+  }
+  
+  footer {
+    background-color: #d1b454;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #ffcc00;
+    margin-top: 30px;
+  }
+  
+  /* Contenedor principal del formulario */
+  .container {
+    max-width: 600px;
+    margin: 40px auto 60px;
+    padding: 20px 30px;
+    background-color: #1e2f57;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+    color: white;
+  }
+  
+  /* Etiquetas del formulario */
+  form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffcc00;
+  }
+  
+  /* Inputs y textarea */
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    color: #000;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px #d1b454;
+  }
+  
+  form textarea {
+    resize: vertical;
+    height: 120px;
+  }
+  
+  /* Botón */
+  button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #d1b454;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background: #b9983a;
+  }
+  
+  /* Mensaje de confirmación */
+  #mensaje-confirmacion {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    color: #00ff00;
+  }
+  
