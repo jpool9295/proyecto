@@ -36,7 +36,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root123
       MYSQL_DATABASE: mi_data
-      MYSQL_USER: tienda_user
+      MYSQL_USER: root
       MYSQL_PASSWORD: tienda123
     ports:
       - "3307:3306"

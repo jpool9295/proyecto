@@ -1,52 +1,37 @@
 <?php
 session_start();
-
-// Datos de conexión a MySQL (según docker-compose)
-$servername = "db";
-$username = "usuario";
-$password = "pass123";
-$dbname = "mi_data";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("❌ Error en la conexión: " . $conn->connect_error);
-}
+include 'conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $id_usuario = $_POST['id_usuario'];
-    $password = $_POST['password'];
+    $usuario = $_POST['usuario'];
+    $contraseña = $_POST['contraseña'];
 
-    // Consulta preparada
-    $stmt = $conn->prepare("SELECT id_usuario, nombre, apellido, correo, password 
-                            FROM usuarios 
-                            WHERE id_usuario = ?");
-    $stmt->bind_param("s", $id_usuario);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // Buscar al usuario por su nombre de usuario
+    $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
+    $result = $conn->query($sql);
 
-    if ($result->num_rows === 1) {
-        $row = $result->fetch_assoc();
+    if ($result->num_rows > 0) {
+        $data = $result->fetch_assoc();
 
-        if (password_verify($password, $row['password'])) {
-            // Guardar variables de sesión
-            $_SESSION['id_usuario'] = $row['id_usuario'];
-            $_SESSION['nombre'] = $row['nombre'];
-            $_SESSION['apellido'] = $row['apellido'];
-            $_SESSION['correo'] = $row['correo'];
+        // Comparar contraseña (si usas encriptación, usar password_verify)
+        if ($contraseña === $data['contraseña']) {
+            // Guardar datos en la sesión
+            $_SESSION['usuario_id'] = $data['id'];
+            $_SESSION['usuario'] = $data['usuario'];
+            $_SESSION['nombre'] = $data['nombre'];
+            $_SESSION['apellido'] = $data['apellido'];
+            $_SESSION['correo'] = $data['correo'];
+            $_SESSION['dni'] = $data['dni'];
 
-            echo "✅ Bienvenido " . $row['nombre'] . " " . $row['apellido'] .
-                ". <a href='/frontend/inicio.html'>Ir al inicio</a>";
+            // Redirigir al perfil
+            header("Location: perfil.php");
             exit();
         } else {
-            echo "❌ Contraseña incorrecta.";
+            echo "<script>alert('Contraseña incorrecta'); window.location='login.html';</script>";
         }
     } else {
-        echo "❌ El ID de usuario no existe.";
+        echo "<script>alert('Usuario no encontrado'); window.location='login.html';</script>";
     }
-
-    $stmt->close();
 }
 
 $conn->close();
