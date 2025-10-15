@@ -1,0 +1,150 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3b5080;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+.banner{
+    background: url(banner1.jpg)center/cover no-repeat;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding: 0 1rem;
+  }
+  .banner-texto h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px #3b5080;
+  }
+  header img {
+    height: 100px;
+    vertical-align: middle;
+  }
+  .items{
+    background-color:#3b5080;
+  }
+  nav {
+    background-color: #d1b454;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    color:#3b5080;
+    text-decoration:underline;
+  }
+
+/* Contenido principal */
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+}
+
+main h2, main h3 {
+    color: #2C3E50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.producto {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.producto button {
+    background-color: #2C3E50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.total {
+    font-size: 1.3em;
+    margin: 20px 0;
+    color: #2C3E50;
+    font-weight: bold;
+}
+
+/* Formulario */
+.formulario {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.formulario label {
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    color: #2C3E50;
+    font-weight: bold;
+}
+
+
+.formulario select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.formulario button {
+    background-color: #d1b454;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.formulario button:hover {
+    background-color: #3b5080;
+}
+
+/* Footer */
+footer {
+    background-color: #d1b454;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+ 
+  footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }

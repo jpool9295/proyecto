@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROPA</title>
+     <link rel="stylesheet" href="stylecarrito.css" />
+</head>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.formulario');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // ¡ESTO ES MUY IMPORTANTE!
+
+  });
+});
+</script>
+<body>
+    <header class="banner">
+        <div class="banner-texto">
+        <h1>Tienda Urbana</h1> 
+      </div>
+      </header>
+
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="hombres.html">Hombres</a>
+    <a href="registro.html">Registrar</a>
+    <a href="carrito.html">Carrito</a>
+    <a href="contacto.html">Perfil</a>
+
+  </nav>
+  
+  <main>
+    <h3>Datos de la Compra</h3>
+    <form class="formulario" action="#" method="post">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text"class="cuadro.fomr" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
+      </div>
+
+      <div>
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" class="cuadro.fomr" id="telefono" name="telefono" placeholder="123-456-7890" required />
+      </div>
+
+      <div>
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" class="cuadro.fomr" id="ubicacion" name="ubicacion" placeholder="Ciudad, Calle" required />
+      </div>
+
+      <div>
+        <label for="dni">DNI:</label>
+        <input type="text" class="cuadro.fomr" id="dni" name="dni" placeholder="12345678" required />
+      </div>
+
+      <div>
+        <label for="pago">Método de Pago:</label>
+        <select id="pago" name="pago" required>
+          <option value="">Selecciona...</option>
+          <option value="tarjeta">Tarjeta</option>
+          <option value="efectivo">Efectivo</option>
+          <option value="yape">Yape</option>
+        </select>
+      </div>
+
+      <button type="submit">Finalizar Compra</button>
+    </form>
+  </main>
+<footer>
+    <p>Síguenos en redes sociales:</p>
+    <a href="#">Facebook</a> | 
+    <a href="#">Instagram</a> | 
+    <a href="#">TikTok</a>
+  </footer>
+   <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const form = document.querySelector('.formulario');
+
+          if (!form) {
+            console.error('❌ ERROR: No se encontró el formulario con clase "formulario"');
+            return;
+          }
+
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const compra = {
+              nombre: formData.get('nombre'),
+              telefono: formData.get('telefono'),
+              ubicacion: formData.get('ubicacion'),
+              dni: formData.get('dni'),
+              metodo_pago: formData.get('pago')
+            };
+
+            if (!compra.nombre || !compra.telefono || !compra.ubicacion || !compra.dni || !compra.metodo_pago) {
+              alert('⚠️ Por favor, completa todos los campos.');
+              return;
+            }
+
+            try {
+              const response = await fetch('http://localhost:3000/api/compra', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(compra)
+              });
+
+              const result = await response.json();
+
+              if (result.success) {
+                alert('🎉 ¡Compra registrada con éxito en la base de datos!');
+                form.reset();
+              } else {
+                alert('❌ Error del servidor: ' + result.error);
+              }
+            } catch (error) {
+              console.error('🔴 Error de red o CORS:', error);
+              alert('❌ No se pudo conectar al servidor.\n\nAsegúrate de que:\n1. El backend está corriendo (node server.js)\n2. Estás usando http://localhost:3000\n3. No hay errores en la consola (F12)');
+            }
+          });
+        });
+    </script>
+</body>
+
+</html>
