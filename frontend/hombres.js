@@ -93,15 +93,37 @@ vaciarBtn.addEventListener('click', () => {
 });
 
 // ---- PAGAR ----
-pagarBtn.addEventListener('click', () => {
+// ---- PAGAR ----
+pagarBtn.addEventListener('click', async () => {
   if (carrito.length === 0) {
     alert('Tu carrito está vacío.');
     return;
   }
-  alert(`Gracias por tu compra 🛍️\nTotal pagado: S/. ${totalSpan.textContent}`);
-  carrito = [];
-  actualizarCarrito();
-  carritoDiv.classList.remove('activo');
+
+  const total = parseFloat(totalSpan.textContent);
+
+  try {
+    const response = await fetch('http://localhost:8082/pagar.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ carrito, total })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert('✅ Compra registrada en la base de datos.');
+      carrito = [];
+      actualizarCarrito();
+      carritoDiv.classList.remove('activo');
+    } else {
+      alert('❌ Error: ' + (data.error || 'No se pudo registrar la compra.'));
+    }
+
+  } catch (error) {
+    alert('⚠️ Error de conexión con el servidor.');
+    console.error(error);
+  }
 });
 
 // ---- CARGAR CARRITO GUARDADO ----

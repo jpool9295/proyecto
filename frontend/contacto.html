@@ -23,27 +23,23 @@
   </nav>
 
   <main class="container">
-    <h2>Contacto</h2>
-    <form id="form-contacto">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
+  <h2>Contacto</h2>
 
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required>
+  <form id="contacto-form">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
 
-      <label for="asunto">Asunto:</label>
-      <input type="text" id="asunto" name="asunto" required>
+    <label for="correo">Correo electrónico:</label>
+    <input type="email" id="correo" name="correo" required>
 
-      <label for="mensaje">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" required></textarea>
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" required></textarea>
 
-      <button type="submit">Enviar</button>
-    </form>
+    <button type="submit">Enviar</button>
+  </form>
 
-    <div id="mensaje-confirmacion" style="display:none; margin-top:20px; color: #00ff00;">
-      ¡Gracias por contactarnos! Tu mensaje ha sido recibido.
-    </div>
-  </main>
+  <div id="respuesta" style="margin-top:20px; font-weight:bold;"></div>
+</main>
 
   <footer>
     <p>Síguenos en redes sociales:</p>
